@@ -1,0 +1,32 @@
+@use 'variables' as v;
+
+
+@mixin container-for-page () {
+
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+
+
+}
+
+
+
+
+
+
+@mixin devices ($breakpoint) {
+
+  @if $breakpoint ==tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
