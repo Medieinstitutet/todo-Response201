@@ -1,5 +1,5 @@
 .addTodoContainer {
-  grid-area: 1/1/25/25;
+  grid-area: 1/1/10/25;
   width: 100%;
   height: 100%;
   background-color: aquamarine;
@@ -50,9 +50,19 @@
   height: 10%;
 }
 
-.hide {
-  background-color: aquamarine;
-  display: none;
+.actionButtonsContainer {
+  background-color: brown;
+  width: 100%;
+  grid-area: 10/1/12/25;
+  display: flex;
+  justify-content: space-around;
+}
+
+#todosContainer {
+  width: 100%;
+  grid-area: 12/1/25/25;
+  background-color: bisque;
+  overflow-y: scroll;
 }
 
 :root {
