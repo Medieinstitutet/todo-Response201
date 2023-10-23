@@ -1,14 +1,6 @@
-
-
 import { addTodoToList } from './function';
-
-
-
 /* Pass current list and 'valueOfTodo'=> display items based on this condition */
 export const addTodo = (list, valueOfTodo) => {
-
-
-
     /* component input container  */
     const addTodoContainer = document.createElement('articel')
     addTodoContainer.classList.add('addTodoContainer')
@@ -18,7 +10,6 @@ export const addTodo = (list, valueOfTodo) => {
     inputContainer.classList.add('inputContainer')
     const closeButtonContainer = document.createElement('section')
     closeButtonContainer.classList.add('inputContainer___closeButtonContainer')
-
 
     /* Text */
     const text = document.createElement('h2')
@@ -30,24 +21,14 @@ export const addTodo = (list, valueOfTodo) => {
     titel.classList.add('inputContainer___titel')
     titel.placeholder = 'Titel'
     titel.minLength = 3;
-    titel.maxLength = 40;
-    titel.required = true
-
-  
-
-
+    titel.maxLength = 30;
+    titel.required = true;
 
     /*  button add todo */
-
     const addButton = document.createElement('button')
     addButton.classList.add('inputContainer___button')
     addButton.innerHTML = 'Add todo'
     addButton.type = "submit"
-
-
-
-
-
 
     /* add elements to page  */
     document.body.appendChild(addTodoContainer)
@@ -57,30 +38,15 @@ export const addTodo = (list, valueOfTodo) => {
     inputContainer.appendChild(titel)
     inputContainer.appendChild(addButton)
 
-
-
-
-
     /* EventListener add new todo */
-
     inputContainer.addEventListener("submit", (e) => {
         e.preventDefault();
+
         /* create new todo with values from input: titel.value, done.value: false by defaul */
-        let data = { titel: titel.value, done: false }
+        let data = { titel: titel.value, done: false, showContent:true }
+        
         /* passing data(new todo information), current List, 'valueOfTodo' => display items based on this condition  */
         addTodoToList(data, list, valueOfTodo)
         titel.value='';
-        task.value='';
-
     });
-
-
-
-
-
-
-
 }
-
-
-

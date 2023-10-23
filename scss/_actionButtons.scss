@@ -1,26 +1,35 @@
 @use "variables" as v;
 @use 'mixins';
 .actionButtonsContainer{
-
-background-color: brown;
 width: 100%;
-grid-area: 10/1/12/25;
-
+grid-area: 10/1/11/25;
 display: flex;
-justify-content: space-around;
 align-items: center;
+justify-content: center;
 
 
 
+.actionButtonsSection{
+    width: 90%;
+    max-width: 700px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+    button{
 
-button{
-
-    @include mixins.button() {
-
-
+        @include mixins.button() {
+    
+    
+        
+        }
     
     }
 
+
+
 }
+
+
+
 
 }

@@ -10,16 +10,15 @@
   font-size: 12pt;
   height: 100%;
   width: 100%;
-
+  overflow: hidden;
 }
 
 body {
-  overflow-x: hidden;
+
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: grey;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   grid-template-rows: repeat(24, 1fr);

@@ -8,8 +8,6 @@ grid-area: 1/1/10/25;
 
 width: 100%;
 height: 100%;
-background-color: aquamarine;
-
 display: flex;
 align-items: center;
 justify-content: center;
@@ -24,10 +22,10 @@ justify-content: center;
 
 .inputContainer{
 
-padding: 1% 0;
+
 height: 80%;
 width: 90%;
-max-width: 500px;
+max-width: 700px;
 max-height: 450px;
 background-color: brown;
 display: flex;
@@ -56,7 +54,7 @@ position: absolute;
 }
 
 
-&___titel, &___task{
+&___titel{
 
 
 width: 70%;
@@ -72,20 +70,17 @@ height: 10%;
 	}
 
 
-&___task{
-height: 40%;
-resize: none;
 
-margin: 5% 0;
-
-}
 
 
 &___button{
 
-background-color: burlywood;
-height: 10%;
 
+        @include mixins.button() {
+    
+    
+        
+        }
 
 }
 

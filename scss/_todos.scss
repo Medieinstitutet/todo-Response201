@@ -18,38 +18,31 @@ display: none;
 
 #todosContainer{
 width: 100%;
-
-grid-area: 12/1/25/25;
-
-background-color: bisque;
-overflow-y: scroll hidden;
-overflow-x: hidden;
+height: 100%;
+grid-area: 11/1/25/25;
+overflow: hidden;
+padding: 0;
+margin: 0;
 display: flex;
 justify-content: center;
-
+align-items: start;
  }
 
-.todosLitsContainer{
 
-
-width: 90%;
-
-
-}
 
 
 .showList{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px 0;
+    justify-content: start;
+    margin: 0;
     padding: 0;
-    width: 95%;
-
-
-
-  
-
+height: 100%;
+width: 100%;
+overflow-y:  scroll;
+-ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
 button{
 
     @include mixins.button() {
@@ -59,25 +52,34 @@ button{
     }
 
 }
-    
-    
 
-li{
-max-width: 700px;
-    height: 50px;
-    width: 100%;
-    margin: 5px 0;
-    padding: 0;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: cadetblue;
-}
+
 
 
 
 }
 
+
+
+
+    
+.showList::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+
+.listItem{
+    max-width: 700px;
+      
+        min-height: 70px;
+        width: calc(90% - 10px);
+        margin: 15px 0;
+        padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cadetblue;
+    }
 
 
 
@@ -93,13 +95,14 @@ padding: 0 2px;
 margin: 0;
 padding: 0;
 width: 90%;
+font-size: clamp(0.9rem, 2vw, 1rem);
 
 }
 
 &___changeInput{
     outline:none;
-
-
+border: none;
+height: v.$height;
 
 }
 

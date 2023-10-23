@@ -2,11 +2,6 @@
 import { actionButtons } from "./actionButtons"
 import { addTodo } from "./addTodo"
 import { todos } from "./todos"
-
-
-
-
-
 /* remove the old list if its content changes   */
 export const removeOldList = () => {
     const removeElemnt = document.getElementById('todosContainer')
@@ -20,6 +15,7 @@ export const removeTodo = (list, removeItem) => {
         list.splice(removeItem, 1)
         /*passing current list after todo is removd  */
         List(list)
+        todos(list)
     }
 }
 /* Add new todo, 'valueOfTodo' =>  display items based on this condition*/
@@ -30,14 +26,23 @@ export const addTodoToList = (data, list, valueOfTodo) => {
     if (list) {
         /*passing current list after new todo is added and 'valueOfTodo' => display items based on this condition */
         List(list, valueOfTodo)
+        todos(list, valueOfTodo)
     }
 }
 /* "list" give back updated list, 'valueOfTodo' =>  display items based on this condition */
 export const List = (list, valueOfTodo) => {
-    let startList = [{ titel: 'a', done: true }, { titel: 'c', done: false }, { titel: 'b', done: true }]
+    let startList = [{ titel: 'drink water', done: true, showContent: true }, { titel: 'fix css', done: false, showContent: true }, { titel: 'make dinner', done: true, showContent: true },
+    { titel: "Make dinner", done: true, showContent: true },
+    { titel: "Wash car", done: true, showContent: true },
+    { titel: "Write code", done: false, showContent: true },
+    { titel: "Read book", done: true, showContent: true },
+    { titel: "Walk dog", done: false, showContent: true },
+    { titel: "Clean room", done: false, showContent: true }
+    ]
     /* if list changes, new current list is passed to components  */
     if (list) {
-        todos(list, valueOfTodo)
+        
+
         addTodo(list, valueOfTodo);
         actionButtons(list)
     }
@@ -50,10 +55,15 @@ export const List = (list, valueOfTodo) => {
 }
 
 
-/* change titel => todo, find todo in current list, change old titel to new titel, update list after change of titel, 'valueOfTodo' => display items based on this condition */
-export const changeTitel = (list, todoItem, newTitel, valueOfTodo) => {
-    list[todoItem].titel = newTitel
-    List(list, valueOfTodo)
+export const scrollToItemAfterSave = (todoItem) => {
+
+
+
+todoItem.scrollIntoViewIfNeeded()
+
+
+
+
 }
 
 
