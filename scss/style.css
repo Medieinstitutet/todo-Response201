@@ -56,13 +56,78 @@
   grid-area: 10/1/12/25;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+.actionButtonsContainer button {
+  width: 20%;
+  max-width: 70px;
+  height: 30px;
+}
+
+.hide {
+  display: none;
 }
 
 #todosContainer {
   width: 100%;
   grid-area: 12/1/25/25;
   background-color: bisque;
-  overflow-y: scroll;
+  overflow-y: scroll hidden;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.todosLitsContainer {
+  width: 90%;
+}
+
+.showList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+  padding: 0;
+  width: 95%;
+}
+.showList button {
+  width: 20%;
+  max-width: 70px;
+  height: 30px;
+}
+.showList li {
+  max-width: 700px;
+  height: 50px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: cadetblue;
+}
+
+.titelContainer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 40%;
+  overflow: hidden;
+  padding: 0 2px;
+}
+.titelContainer___titel, .titelContainer___changeInput {
+  margin: 0;
+  padding: 0;
+  width: 90%;
+}
+.titelContainer___changeInput {
+  outline: none;
+}
+.titelContainer___changeInput:focus:valid {
+  background-color: greenyellow;
+}
+.titelContainer___changeInput:focus:invalid {
+  background-color: rgb(255, 47, 130);
 }
 
 :root {

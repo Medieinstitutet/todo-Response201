@@ -1,6 +1,6 @@
 
 
-import { sendToAnotherFile } from './function';
+import { addTodoToList } from './function';
 
 
 
@@ -25,20 +25,15 @@ export const addTodo = (list, valueOfTodo) => {
     text.classList.add('inputContainer___text')
     text.innerHTML = 'Add a todo'
 
-    /*  inputs  */
+    /*  input  */
     const titel = document.createElement('input')
     titel.classList.add('inputContainer___titel')
     titel.placeholder = 'Titel'
     titel.minLength = 3;
-    titel.maxLength = 20;
+    titel.maxLength = 40;
     titel.required = true
 
-    const task = document.createElement('textarea')
-    task.classList.add('inputContainer___task')
-    task.placeholder = 'what to fix'
-    task.minLength = 3;
-    task.maxLength = 120;
-    task.required = true
+  
 
 
 
@@ -60,7 +55,6 @@ export const addTodo = (list, valueOfTodo) => {
     inputContainer.appendChild(closeButtonContainer)
     inputContainer.appendChild(text)
     inputContainer.appendChild(titel)
-    inputContainer.appendChild(task)
     inputContainer.appendChild(addButton)
 
 
@@ -71,10 +65,10 @@ export const addTodo = (list, valueOfTodo) => {
 
     inputContainer.addEventListener("submit", (e) => {
         e.preventDefault();
-        /* create new todo with values from input: titel.value, task.value. done.value:  false by defaul */
-        let data = { titel: titel.value, subject: task.value, done: false }
+        /* create new todo with values from input: titel.value, done.value: false by defaul */
+        let data = { titel: titel.value, done: false }
         /* passing data(new todo information), current List, 'valueOfTodo' => display items based on this condition  */
-        sendToAnotherFile(data, list, valueOfTodo)
+        addTodoToList(data, list, valueOfTodo)
         titel.value='';
         task.value='';
 

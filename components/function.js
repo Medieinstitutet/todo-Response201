@@ -23,7 +23,7 @@ export const removeTodo = (list, removeItem) => {
     }
 }
 /* Add new todo, 'valueOfTodo' =>  display items based on this condition*/
-export const sendToAnotherFile = (data, list, valueOfTodo) => {
+export const addTodoToList = (data, list, valueOfTodo) => {
     if (data && list) {
         list.push(data)
     }
@@ -34,7 +34,7 @@ export const sendToAnotherFile = (data, list, valueOfTodo) => {
 }
 /* "list" give back updated list, 'valueOfTodo' =>  display items based on this condition */
 export const List = (list, valueOfTodo) => {
-    let startList = [{ titel: 'a', subject: 'hdsjhd', done: true }, { titel: 'c', subject: 'hdsjhd', done: false }, { titel: 'b', subject: 'hdsjhd', done: true }]
+    let startList = [{ titel: 'a', done: true }, { titel: 'c', done: false }, { titel: 'b', done: true }]
     /* if list changes, new current list is passed to components  */
     if (list) {
         todos(list, valueOfTodo)
@@ -48,3 +48,12 @@ export const List = (list, valueOfTodo) => {
         actionButtons(startList)
     }
 }
+
+
+/* change titel => todo, find todo in current list, change old titel to new titel, update list after change of titel, 'valueOfTodo' => display items based on this condition */
+export const changeTitel = (list, todoItem, newTitel, valueOfTodo) => {
+    list[todoItem].titel = newTitel
+    List(list, valueOfTodo)
+}
+
+

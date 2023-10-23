@@ -1,6 +1,34 @@
 @use 'variables' as v;
 
 
+
+
+
+
+
+
+@mixin button() {
+width: 20%;
+max-width: 70px;
+height: 30px;
+  @content;
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @mixin container-for-page () {
 
   padding: 0px;
@@ -30,3 +58,5 @@
     }
   }
 }
+
+

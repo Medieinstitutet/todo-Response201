@@ -1,3 +1,5 @@
+@use "variables" as v;
+@use 'mixins';
 .actionButtonsContainer{
 
 background-color: brown;
@@ -6,4 +8,19 @@ grid-area: 10/1/12/25;
 
 display: flex;
 justify-content: space-around;
+align-items: center;
+
+
+
+
+button{
+
+    @include mixins.button() {
+
+
+    
+    }
+
+}
+
 }
