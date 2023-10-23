@@ -9,7 +9,7 @@ export const addTodo = (list, valueOfTodo) => {
     const inputContainer = document.createElement('form')
     inputContainer.classList.add('inputContainer')
     const closeButtonContainer = document.createElement('section')
-    closeButtonContainer.classList.add('inputContainer___closeButtonContainer')
+ 
 
     /* Text */
     const text = document.createElement('h2')
@@ -19,7 +19,6 @@ export const addTodo = (list, valueOfTodo) => {
     /*  input  */
     const titel = document.createElement('input')
     titel.classList.add('inputContainer___titel')
-    titel.placeholder = 'Titel'
     titel.minLength = 3;
     titel.maxLength = 30;
     titel.required = true;
@@ -33,7 +32,6 @@ export const addTodo = (list, valueOfTodo) => {
     /* add elements to page  */
     document.body.appendChild(addTodoContainer)
     addTodoContainer.appendChild(inputContainer)
-    inputContainer.appendChild(closeButtonContainer)
     inputContainer.appendChild(text)
     inputContainer.appendChild(titel)
     inputContainer.appendChild(addButton)

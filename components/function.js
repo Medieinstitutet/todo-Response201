@@ -13,9 +13,10 @@ export const removeOldList = () => {
 export const removeTodo = (list, removeItem) => {
     if (list && removeItem) {
         list.splice(removeItem, 1)
+        return list
         /*passing current list after todo is removd  */
         List(list)
-        todos(list)
+       
     }
 }
 /* Add new todo, 'valueOfTodo' =>  display items based on this condition*/
@@ -41,8 +42,6 @@ export const List = (list, valueOfTodo) => {
     ]
     /* if list changes, new current list is passed to components  */
     if (list) {
-        
-
         addTodo(list, valueOfTodo);
         actionButtons(list)
     }
