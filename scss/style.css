@@ -1,60 +1,72 @@
 .addTodoContainer {
-  grid-area: 1/1/10/25;
+  height: 300px;
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 80px;
 }
 .inputContainer {
-  height: 80%;
+  height: 100%;
   width: 90%;
-  max-width: 700px;
-  max-height: 450px;
-  background-color: brown;
+  max-width: 618.0469715698px;
+  min-height: 300px;
+  border: 1px gray solid;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  box-shadow: 5px 8px 1px black;
 }
 .inputContainer___text {
-  background-color: aliceblue;
   margin: 0;
   padding: 0;
 }
 .inputContainer___titel {
-  height: 10%;
-  width: 70%;
-  max-width: 400px;
+  outline: none;
+  border: 0;
+  width: 60%;
+  height: clamp(18px, 2vw, 23px);
+  border-bottom: 1px gray solid;
+  max-width: 500px;
+  font-size: clamp(18px, 2vw, 22px);
+  text-align: center;
 }
 .inputContainer___titel:focus {
   outline: none;
-  border: none;
 }
 .inputContainer___button {
   width: 20%;
-  max-width: 70px;
+  max-width: 130px;
   height: 30px;
+  font-size: clamp(10px, 2vw, 15px);
+  background-color: orangered;
+  border-radius: 5px;
 }
 
 .actionButtonsContainer {
   width: 100%;
-  grid-area: 10/1/11/25;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 50px;
+  margin: 80px 0;
 }
 .actionButtonsContainer .actionButtonsSection {
   width: 90%;
-  max-width: 700px;
+  max-width: 618.0469715698px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .actionButtonsContainer .actionButtonsSection button {
   width: 20%;
-  max-width: 70px;
+  max-width: 130px;
   height: 30px;
+  font-size: clamp(10px, 2vw, 15px);
+  background-color: orangered;
+  border-radius: 5px;
 }
 
 .hidden {
@@ -68,8 +80,6 @@
 #todosContainer {
   width: 100%;
   height: 100%;
-  grid-area: 11/1/25/25;
-  overflow: hidden;
   padding: 0;
   margin: 0;
   display: flex;
@@ -78,38 +88,119 @@
 }
 
 .showList {
+  height: auto;
+  width: 90%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  margin: 0;
+  margin: 0 0 40px 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
 }
 .showList button {
   width: 20%;
-  max-width: 70px;
+  max-width: 130px;
   height: 30px;
-}
-
-.showList::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  font-size: clamp(10px, 2vw, 15px);
+  background-color: orangered;
+  border-radius: 5px;
+  width: 90%;
 }
 
 .listItem {
-  max-width: 700px;
-  min-height: 70px;
-  width: calc(90% - 10px);
-  margin: 15px 0;
+  min-height: 60px;
+  width: 90%;
+  margin: 0 0 49.4437577256px 0;
+  width: calc(100% - 10px);
   padding: 0 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  background-color: cadetblue;
+  border-bottom: 1px gray solid;
+  /*    .doneContainer {
+
+         #toggle {
+
+
+  	}
+
+
+
+
+         #toggle:checked + .doneContainer___label{
+
+             height: 50px;
+             width: 50px;
+             background: url("../assets/images/yes.png") no-repeat left center;
+
+         }
+
+
+
+
+
+
+         #toggle + .doneContainer___label{
+
+
+             background: url("../assets/images/no.png") no-repeat left center;
+
+             display: inline-block;
+
+     height: 45px;
+     width: 45px;
+     cursor: pointer;
+           }
+
+
+
+
+       } */
+}
+.listItem .doneContainer .doneContainer___checkbox {
+  /* display: none; */
+}
+.listItem .doneContainer .doneContainer___checkbox--true {
+  display: inline-block;
+  background: url("../assets/images/no.png") no-repeat left center;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+}
+.listItem .doneContainer .doneContainer___checkbox--false {
+  background: url("../assets/images/yes.png") no-repeat left center;
+  height: 45px;
+  width: 45px;
+}
+
+.listItem:nth-child(1) {
+  border: none;
+}
+
+td,
+th {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+
+th {
+  font-size: clamp(12px, 2vw, 20px);
+  text-decoration: underline;
+}
+
+td:nth-child(1),
+th:nth-child(1) {
+  width: 45%;
+  justify-content: start;
+}
+
+td:nth-child(2),
+th:nth-child(2) {
+  justify-content: center;
+  width: 10%;
 }
 
 .titelContainer {
@@ -118,24 +209,41 @@
   justify-content: start;
   width: 40%;
   overflow: hidden;
-  padding: 0 2px;
 }
 .titelContainer___titel, .titelContainer___changeInput {
   margin: 0;
-  padding: 0;
-  width: 90%;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(9px, 2vw, 15px);
+  font-weight: 600;
 }
 .titelContainer___changeInput {
   outline: none;
   border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 400px;
   height: 30px;
+  padding: 0 2px;
 }
-.titelContainer___changeInput:focus:valid {
-  background-color: greenyellow;
+.titelContainer___changeInput::placeholder {
+  height: 30px;
+  font-size: clamp(9px, 2vw, 15px);
+  padding: 5px 0;
+  color: black;
 }
-.titelContainer___changeInput:focus:invalid {
-  background-color: rgb(255, 47, 130);
+.titelContainer___changeInput:focus:valid, .titelContainer___changeInput:valid {
+  background: url("../assets/images/yes.png") no-repeat 98% 50% rgba(238, 180, 144, 0.264);
+  background-size: 15px;
+  font-weight: 500;
+}
+.titelContainer___changeInput:focus:invalid, .titelContainer___changeInput:invalid {
+  background: url("../assets/images/no.png") no-repeat 98% 50% rgba(238, 180, 144, 0.264);
+  background-size: 15px;
+  font-weight: 500;
 }
 
 :root {
@@ -143,7 +251,6 @@
   font-size: 12pt;
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -151,15 +258,19 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  grid-template-rows: repeat(24, 1fr);
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 @media (min-width: 1024px) {
   body {
     min-height: 900px;
   }
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 /*# sourceMappingURL=style.css.map */

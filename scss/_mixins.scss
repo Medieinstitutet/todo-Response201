@@ -1,8 +1,11 @@
 @use 'variables' as v;
 @mixin button() {
   width: 20%;
-  max-width: 70px;
+ max-width: 130px;
   height: v.$height;
+  font-size: clamp(10px, 2vw, 15px);
+  background-color: orangered;
+  border-radius: 5px;
   @content;
 }
 @mixin container-for-page () {

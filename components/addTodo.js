@@ -1,9 +1,16 @@
-import { addTodoToList } from './function';
+import { addTodoToList, removeElement } from './function';
 /* Pass current list and 'valueOfTodo'=> display items based on this condition */
 export const addTodo = (list, valueOfTodo) => {
+
+    removeElement('addTodoContainer')
+
+
+
     /* component input container  */
     const addTodoContainer = document.createElement('articel')
     addTodoContainer.classList.add('addTodoContainer')
+    addTodoContainer.setAttribute('id', 'addTodoContainer')
+
 
     /*  inputs container */
     const inputContainer = document.createElement('form')
@@ -42,6 +49,7 @@ export const addTodo = (list, valueOfTodo) => {
 
         /* create new todo with values from input: titel.value, done.value: false by defaul */
         let data = { titel: titel.value, done: false, showContent:true }
+
         
         /* passing data(new todo information), current List, 'valueOfTodo' => display items based on this condition  */
         addTodoToList(data, list, valueOfTodo)
