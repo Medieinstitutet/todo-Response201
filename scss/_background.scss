@@ -1,0 +1,30 @@
+@use "variables" as v;
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -10;
+  background: v.$primary-color;
+}
+.particle--green {
+  background:  v.$secondary-color;
+}
+/* change each partice, make them lite uniq(opacity, motion, size,  ect */
+@for $i from 1 through 200 {
+  @keyframes particle-animation-#{$i} {
+    100% {
+      transform: translate3d((random(100) * 1vw), (random(100) * 1vh), (random(100) * 1px));
+    }
+  }
+  .particle:nth-child(#{$i}) {
+    animation: particle-animation-#{$i} 60s infinite;
+    $size: random(3) + 1 + px;
+    opacity: random(100)/90;
+    height: $size;
+    width: $size;
+    animation-delay: -$i * .1s;
+    transform: translate3d((random(100) * 1vw), (random(100) * 1vh), (random(100) * 1px));
+  }
+}
+.particle-container {
+  position: absolute;
+}

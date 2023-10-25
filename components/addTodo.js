@@ -4,7 +4,7 @@ export const addTodo = (list, valueOfTodo) => {
 
     removeElement('addTodoContainer')
 
-
+    const container = document.getElementById('container')
 
     /* component input container  */
     const addTodoContainer = document.createElement('articel')
@@ -37,19 +37,21 @@ export const addTodo = (list, valueOfTodo) => {
     addButton.type = "submit"
 
     /* add elements to page  */
-    document.body.appendChild(addTodoContainer)
+    container.appendChild(addTodoContainer)
     addTodoContainer.appendChild(inputContainer)
     inputContainer.appendChild(text)
     inputContainer.appendChild(titel)
     inputContainer.appendChild(addButton)
 
+
+
+
+
     /* EventListener add new todo */
     inputContainer.addEventListener("submit", (e) => {
         e.preventDefault();
-
         /* create new todo with values from input: titel.value, done.value: false by defaul */
         let data = { titel: titel.value, done: false, showContent:true }
-
         
         /* passing data(new todo information), current List, 'valueOfTodo' => display items based on this condition  */
         addTodoToList(data, list, valueOfTodo)

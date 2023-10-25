@@ -1,72 +1,32 @@
 @use "variables" as v;
 @use 'mixins';
-
-
-
-
-.hidden {
-
-    visibility: hidden;
-
-}
-
-
-
 .hide {
-
     display: none;
-
 }
-
-
-
-
 #todosContainer {
     width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+    list-style: none;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: start;
-
-
 }
-
-
-
-
 .showList {
-    height: auto;
+    height: 100%;
     width: 90%;
     max-width: v.$maxWidth;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
+    display: table;
     margin: 0 0 calc(v.$paddning / 2) 0;
     padding: 0;
-
     button {
-
         @include mixins.button() {}
-
-        width: 90%;
-
+        width: 50%;
+        min-width: max-content;
     }
-
-
-
-
-
 }
-
-
 
 
 .listItem {
-
-    min-height: 60px;
+    min-height: 65px;
     width: 90%;
     margin: 0 0 calc(v.$paddning / 1.618) 0;
     width: calc(100% - 10px);
@@ -74,222 +34,38 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 1px gray solid;
-
-
-
- /*    .doneContainer {
-
-        #toggle {
-			
-
-		}
-    
-
-       
-
-        #toggle:checked + .doneContainer___label{
-         
-            height: 50px;
-            width: 50px;
-            background: url("../assets/images/yes.png") no-repeat left center;
-
-        }
-  
-
-
-
-       
-
-        #toggle + .doneContainer___label{
-            
-
-            background: url("../assets/images/no.png") no-repeat left center;
-
-            display: inline-block;
-
-    height: 45px;
-    width: 45px;
-    cursor: pointer;
-          }
-
-
-
-    
-      } */
-
-
-
-
-
-
-      .doneContainer {
-        .doneContainer___checkbox {
-          /* display: none; */
-        }
-      
-        .doneContainer___checkbox--true {
-          display: inline-block;
-          background: url("../assets/images/no.png") no-repeat left center;
-          height: 45px;
-          width: 45px;
-          cursor: pointer;
-        }
-      
-        .doneContainer___checkbox--false{
-          background: url("../assets/images/yes.png") no-repeat left center;
-          height: 45px;
-          width: 45px;
-        }
-      }
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    border-bottom: 1px v.$border solid;
+    font-family: v.$fontOne;
+    background-color: v.$background-light;
 }
+
 
 .listItem:nth-child(1) {
-
     border: none;
-
-
-
 }
-
 td,
 th {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20%;
-
-
 }
-
-
 th {
-
     font-size: clamp(12px, 2vw, 20px);
     text-decoration: underline;
-
-
+    font-weight: 300;
 }
-
-td {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-}
-
-
-
-
-
-
-
 
 td:nth-child(1),
 th:nth-child(1) {
     width: 45%;
     justify-content: start;
-
-
-
 }
-
-
-
 td:nth-child(2),
 th:nth-child(2) {
-
     justify-content: center;
     width: 10%;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -299,39 +75,6 @@ th:nth-child(2) {
     justify-content: start;
     width: 40%;
     overflow: hidden;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     &___titel,
     &___changeInput {
         margin: 0;
@@ -341,9 +84,7 @@ th:nth-child(2) {
         text-overflow: ellipsis;
         font-size: clamp(9px, 2vw, 15px);
         font-weight: 600;
-
     }
-
     &___changeInput {
         outline: none;
         border: none;
@@ -353,49 +94,39 @@ th:nth-child(2) {
         max-width: 400px;
         height: v.$height;
         padding: 0 2px;
-
     }
-
     &___changeInput::placeholder {
         height: v.$height;
         font-size: clamp(9px, 2vw, 15px);
-
         padding: 5px 0;
         color: black;
     }
-
-
-
-
     &___changeInput:focus:valid,
     &___changeInput:valid {
-
-        background: url("../assets/images/yes.png") no-repeat 98% 50% rgba(238, 180, 144, 0.264);
-        background-size: 15px;
+        background: linear-gradient(90deg, rgba(0, 255, 38, 0.2) 10.5625%, rgba(255, 255, 255, 0) 90.5625%);
         font-weight: 500;
     }
-
-
     &___changeInput:focus:invalid,
     &___changeInput:invalid {
-
-        background: url("../assets/images/no.png") no-repeat 98% 50% rgba(238, 180, 144, 0.264);
-        background-size: 15px;
+        background: linear-gradient(90deg, rgba(255, 34, 0, 0.2) 10.5625%, rgba(255, 255, 255, 0) 90.5625%);
         font-weight: 500;
-
-
     }
-
-
-
-
-
-
-
-
-
-
 }
 
 
-
+.doneContainer {
+    .doneContainer___checkbox--true,
+    .doneContainer___checkbox--false {
+        height: 20px;
+        width: clamp(15px, 2vw, 25px);
+        cursor: pointer;
+    }
+    .doneContainer___checkbox--true {
+        background: url("../assets/images/no.png") no-repeat left center;
+        background-size: clamp(15px, 2vw, 25px);
+    }
+    .doneContainer___checkbox--false {
+        background: url("../assets/images/yes.png") no-repeat left center;
+        background-size: clamp(15px, 2vw, 25px);
+    }
+}

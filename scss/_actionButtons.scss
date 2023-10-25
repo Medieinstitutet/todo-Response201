@@ -1,36 +1,20 @@
 @use "variables" as v;
 @use 'mixins';
-.actionButtonsContainer{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 50px;
-margin: v.$paddning 0;
-
-
-
-.actionButtonsSection{
-    width: 90%;
-    max-width:calc( v.$maxWidth / 1.618 );
-display: flex;
-justify-content: space-between;
-align-items: center;
-    button{
-
-        @include mixins.button() {
-    
-    
-        
+.actionButtonsContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    margin: v.$paddning 0;
+    .actionButtonsSection {
+        width: 90%;
+        max-width: calc(v.$maxWidth / 1.618);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            @include mixins.button() {}
         }
-    
     }
-
-
-
-}
-
-
-
-
 }

@@ -1,45 +1,31 @@
+@use 'background';
 @use 'addtodo';
 @use 'actionButtons';
 @use 'todos';
 @use 'mixins';
-
-
-
+@use "variables" as v;
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 12pt;
   height: 100%;
   width: 100%;
-
 }
-
 body {
   margin:  0;
   padding:  0;
-  height: 100%;
+  height: 99%;
   width: 100%;
   display: flex;
   flex-direction: column;
-justify-content: start;
-
-
-
-
-  @include mixins.devices(desktop) {
-
-    min-height: 900px;
-
-  }
-
-
-
-
+  justify-content: start;
+overflow: hidden;
 }
-
-
-
-
-body::-webkit-scrollbar {
+.container{
+height: 100%;
+overflow-y: scroll;
+overflow-x: hidden;
+}
+.container::-webkit-scrollbar {
   width: 0px;
-  background: transparent; /* make scrollbar transparent */
+  background: transparent; 
 }

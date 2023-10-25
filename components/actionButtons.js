@@ -2,6 +2,9 @@ import { List, closeChangeItems, removeElement } from "./function"
 import { todos } from "./todos"
 export const actionButtons = (list) => {
     removeElement('actionButtonsContainer')
+
+
+    const container = document.getElementById('container')
     const actionButtonsContainer = document.createElement('articel')
     actionButtonsContainer.setAttribute('id', 'actionButtonsContainer')
     const actionButtonsSection = document.createElement('section')
@@ -13,7 +16,7 @@ export const actionButtons = (list) => {
     notDone.innerHTML = 'left to do'
     let done = document.createElement('button')
     done.innerHTML = 'done'
-    document.body.appendChild(actionButtonsContainer)
+    container.appendChild(actionButtonsContainer)
     actionButtonsContainer.appendChild(actionButtonsSection)
     actionButtonsSection.appendChild(sortList);
     actionButtonsSection.appendChild(notDone)
@@ -41,8 +44,9 @@ export const actionButtons = (list) => {
         closeChangeItems(list, '', '')
         List(list, '')
         todos(list, '')
-    })
 
+
+    })
 
 
 
@@ -53,10 +57,11 @@ export const actionButtons = (list) => {
         closeChangeItems(list, true, '')
         List(list, true)
         todos(list, true)
+
     })
 
 
-    
+
     notDone.addEventListener('click', (e) => {
         e.preventDefault()
         /* display todos with value 'not done' from current list,  remove save button & change titel */
@@ -64,5 +69,6 @@ export const actionButtons = (list) => {
         closeChangeItems(list, false, '')
         List(list, false)
         todos(list, false)
+
     })
 }

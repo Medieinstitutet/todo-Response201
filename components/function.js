@@ -1,7 +1,9 @@
 /* remove old list */
 import { actionButtons } from "./actionButtons"
 import { addTodo } from "./addTodo"
+import { background } from "./background"
 import { todos } from "./todos"
+
 
 
 /* remove the old list if its content changes   */
@@ -23,15 +25,16 @@ export const removeTodo = (list, removeItem) => {
 }
 
 
+
 /* Add new todo, 'valueOfTodo' =>  display items based on this condition*/
 export const addTodoToList = (data, list, valueOfTodo) => {
     if (data) {
         list.push(data)
-        console.log(list)
         /*passing current list after new todo is added and 'valueOfTodo' => display items based on this condition */
         List(list, valueOfTodo)
     }
 }
+
 
 
 /* "list" give back updated list, 'valueOfTodo' =>  display items based on this condition */
@@ -47,6 +50,7 @@ export const List = (list, valueOfTodo) => {
         { titel: "Walk dog", done: false, showContent: true },
         { titel: "Clean room", done: false, showContent: true }
     ];
+
     /* if list changes, new current list is passed to components  */
     if (list) {
         addTodo(list, valueOfTodo);
@@ -62,6 +66,8 @@ export const List = (list, valueOfTodo) => {
 }
 
 
+
+
 /* Function to disable editing of a todo (change/save button) */
 export const closeChangeItems = (list, valueOfTodo, todoItem) => {
     list.forEach(item => {
@@ -74,13 +80,12 @@ export const closeChangeItems = (list, valueOfTodo, todoItem) => {
 }
 
 
+
+/* Give ha short delay before list update */
 export const timeOutList = (list, valueOfTodo) => {
     setTimeout(() => {
         List(list, valueOfTodo)
     },
         600
     );
-
-
-
 }
