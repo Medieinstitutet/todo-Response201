@@ -84,6 +84,7 @@ th:nth-child(2) {
         text-overflow: ellipsis;
         font-size: clamp(9px, 2vw, 15px);
         font-weight: 600;
+        cursor: default;
     }
     &___changeInput {
         outline: none;
@@ -122,11 +123,11 @@ th:nth-child(2) {
         cursor: pointer;
     }
     .doneContainer___checkbox--true {
-        background: url("../assets/images/no.png") no-repeat left center;
+        background: url("../assets/images/yes.png") no-repeat left center;
         background-size: clamp(15px, 2vw, 25px);
     }
     .doneContainer___checkbox--false {
-        background: url("../assets/images/yes.png") no-repeat left center;
+        background: url("../assets/images/no.png") no-repeat left center;
         background-size: clamp(15px, 2vw, 25px);
     }
 }
