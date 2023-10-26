@@ -32,10 +32,10 @@
 		outline: none;
 		border: 0;
 		width: 60%;
-		height: clamp(18px, 2vw, 23px);
+		height: clamp(15px, 2vw, 23px);
 		border-bottom: 1px v.$border solid;
 		max-width: 500px;
-		font-size: clamp(14px, 2vw, 20px);
+		font-size: clamp(10px, 2.5vw, 20px);
 		text-align: center;
 		font-family: v.$fontOne;
 		font-weight: 600;
