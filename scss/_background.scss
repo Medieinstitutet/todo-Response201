@@ -1,30 +1,35 @@
 @use "variables" as v;
+
 .particle {
   position: absolute;
   border-radius: 50%;
+  box-shadow: 0px 0px 2.8px 0 white inset, 0px 0px 2.8px 0 white inset;
   z-index: -10;
   background: v.$primary-color;
 }
+
 .particle--green {
-  background:  v.$secondary-color;
+  background: v.$secondary-color;
 }
-/* change each partice, make them lite uniq(opacity, motion, size,  ect */
+
+/* change each partice, make them lite uniq( motion, size,  ect */
 @for $i from 1 through 200 {
   @keyframes particle-animation-#{$i} {
     100% {
       transform: translate3d((random(100) * 1vw), (random(100) * 1vh), (random(100) * 1px));
     }
   }
+
   .particle:nth-child(#{$i}) {
-    animation: particle-animation-#{$i} 60s infinite;
-    $size: random(3) + 1 + px;
-    opacity: random(100)/90;
+    animation: particle-animation-#{$i} 200s infinite;
+    $size: random(5) + 1 + px;
     height: $size;
     width: $size;
     animation-delay: -$i * .1s;
-    transform: translate3d((random(100) * 1vw), (random(100) * 1vh), (random(100) * 1px));
+    transform: translate3d((random(100) * 1vw), (random(100) * 1vh), (random(100) * 5px));
   }
 }
+
 .particle-container {
   position: absolute;
 }
