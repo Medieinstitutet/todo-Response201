@@ -1,5 +1,5 @@
 import { eventListenerTodos } from "./eventListeners";
-import { removeElement } from "./function";
+import { removeElement } from "./functions";
 
 
 /* Pass current list and 'valueOfTodo' => display items based on this condition */
@@ -37,7 +37,7 @@ export const todos = (list, valueOfTodo) => {
   headerRow.appendChild(thChange);
 
 
-/* looping over elements in list */
+  /* looping over elements in list */
   for (let i = 0; i < list.length; i++) {
     const row = document.createElement('tr');
     row.classList.add('listItem')

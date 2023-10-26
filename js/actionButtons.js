@@ -1,5 +1,5 @@
 import { eventListenerActionButtons } from "./eventListeners"
-import {  removeElement } from "./function"
+import { removeElement } from "./functions"
 export const actionButtons = (list) => {
     removeElement('actionButtonsContainer')
 
@@ -21,6 +21,6 @@ export const actionButtons = (list) => {
     actionButtonsSection.appendChild(notDone)
     actionButtonsSection.appendChild(done)
 
-     /* EventListener for: sortList, notDone, done */ 
+    /* EventListener for: sortList, notDone, done */
     eventListenerActionButtons(list, sortList, notDone, done)
 }

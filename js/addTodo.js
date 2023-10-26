@@ -1,10 +1,10 @@
 import { eventListenerAddTodo } from './eventListeners';
-import {  removeElement } from './function';
+import { removeElement } from './functions';
 /* Pass current list and 'valueOfTodo'=> display items based on this condition */
 export const addTodo = (list, valueOfTodo) => {
     removeElement('addTodoContainer')
     const container = document.getElementById('container')
-    
+
     /* component input container  */
     const addTodoContainer = document.createElement('articel')
     addTodoContainer.classList.add('addTodoContainer')
@@ -41,6 +41,6 @@ export const addTodo = (list, valueOfTodo) => {
 
 
 
-   /* EventListener for form: inputContainer */ 
-    eventListenerAddTodo(list, valueOfTodo,titel, inputContainer )
+    /* EventListener for form: inputContainer */
+    eventListenerAddTodo(list, valueOfTodo, titel, inputContainer)
 }

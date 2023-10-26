@@ -1,4 +1,4 @@
-import { List, addTodoToList, closeChangeItems, removeTodo, timeOutList } from "./function";
+import { List, addTodoToList, closeChangeItems, removeTodo, timeOutList } from "./functions";
 import { todos } from "./todos";
 
 
