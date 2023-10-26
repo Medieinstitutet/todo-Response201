@@ -1,7 +1,6 @@
 /* remove old list */
 import { actionButtons } from "./actionButtons"
 import { addTodo } from "./addTodo"
-import { background } from "./background"
 import { todos } from "./todos"
 
 

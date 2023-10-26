@@ -1,6 +1,6 @@
 import "./scss/style.css";
-import { List } from "./components/function";
-import { background } from "./components/background";
+import { List } from "./js/function";
+import { background } from "./js/background";
 
 
 

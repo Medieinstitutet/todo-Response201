@@ -1,22 +1,18 @@
-import { addTodoToList, removeElement } from './function';
+import { eventListenerAddTodo } from './eventListeners';
+import {  removeElement } from './function';
 /* Pass current list and 'valueOfTodo'=> display items based on this condition */
 export const addTodo = (list, valueOfTodo) => {
-
     removeElement('addTodoContainer')
-
     const container = document.getElementById('container')
-
+    
     /* component input container  */
     const addTodoContainer = document.createElement('articel')
     addTodoContainer.classList.add('addTodoContainer')
     addTodoContainer.setAttribute('id', 'addTodoContainer')
 
-
     /*  inputs container */
     const inputContainer = document.createElement('form')
     inputContainer.classList.add('inputContainer')
-    const closeButtonContainer = document.createElement('section')
- 
 
     /* Text */
     const text = document.createElement('h2')
@@ -45,16 +41,6 @@ export const addTodo = (list, valueOfTodo) => {
 
 
 
-
-
-    /* EventListener add new todo */
-    inputContainer.addEventListener("submit", (e) => {
-        e.preventDefault();
-        /* create new todo with values from input: titel.value, done.value: false by defaul */
-        let data = { titel: titel.value, done: false, showContent:true }
-        
-        /* passing data(new todo information), current List, 'valueOfTodo' => display items based on this condition  */
-        addTodoToList(data, list, valueOfTodo)
-        titel.value='';
-    });
+   /* EventListener for form: inputContainer */ 
+    eventListenerAddTodo(list, valueOfTodo,titel, inputContainer )
 }

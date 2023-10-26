@@ -1,7 +1,12 @@
-import { List, closeChangeItems, removeElement, removeTodo, timeOutList } from "./function";
+import { eventListenerTodos } from "./eventListeners";
+import { removeElement } from "./function";
+
+
 /* Pass current list and 'valueOfTodo' => display items based on this condition */
 export const todos = (list, valueOfTodo) => {
   const container = document.getElementById('container')
+
+
   /* Call function to remove 'old' list */
   removeElement('todosContainer')
 
@@ -32,7 +37,7 @@ export const todos = (list, valueOfTodo) => {
   headerRow.appendChild(thChange);
 
 
-
+/* looping over elements in list */
   for (let i = 0; i < list.length; i++) {
     const row = document.createElement('tr');
     row.classList.add('listItem')
@@ -44,7 +49,7 @@ export const todos = (list, valueOfTodo) => {
     const changeContainer = document.createElement('td');
     const titel = document.createElement('p');
     titel.classList.add('titelContainer___titel');
-    const SpanstatusOfTodo = document.createElement('div')
+    const statusOfTodoCheck = document.createElement('div')
     const statusOfTodo = document.createElement('input');
     const newTitel = document.createElement('input');
     newTitel.classList.add('titelContainer___changeInput');
@@ -57,13 +62,11 @@ export const todos = (list, valueOfTodo) => {
     changeTextButton.setAttribute('id', `changeButton${[i]}`);
     removButton.innerHTML = 'Delete';
     statusOfTodo.classList.add('doneContainer___checkbox')
-    SpanstatusOfTodo.classList.add(`doneContainer___checkbox--${list[i].done}`)
-
-
-
+    statusOfTodoCheck.classList.add(`doneContainer___checkbox--${list[i].done}`)
     /* set first letter to uppercase */
     titel.innerHTML = list[i].titel[0].toUpperCase() + list[i].titel.substr(1);
     let showContent = list[i].showContent;
+
 
 
     /* 'valueOfTodo' check if todo is done or not =>  then display item based on this condition */
@@ -73,7 +76,7 @@ export const todos = (list, valueOfTodo) => {
       titelContainer.appendChild(newTitel);
       titelContainer.appendChild(titel);
       row.appendChild(doneContainer);
-      doneContainer.appendChild(SpanstatusOfTodo);
+      doneContainer.appendChild(statusOfTodoCheck);
       row.appendChild(deleteContainer);
       row.appendChild(deleteContainer);
       deleteContainer.appendChild(removButton);
@@ -90,35 +93,9 @@ export const todos = (list, valueOfTodo) => {
       titel.classList.add('hide')
       changeTextButton.innerHTML = 'save'
     }
-    /* EventListener remove todo   */
-    removButton.addEventListener("click", () => {
-      removeTodo(list, [i])
-      List(list, valueOfTodo)
-    });
 
 
-
-
-    /* EventListener change conditon for item (item.done:true/false)  */
-    SpanstatusOfTodo.addEventListener("click", () => {
-      SpanstatusOfTodo.classList.remove(`doneContainer___checkbox--${list[i].done}`)
-      list[i].done = !list[i].done
-      SpanstatusOfTodo.classList.add(`doneContainer___checkbox--${list[i].done}`)
-      /*passing list after items is change */
-      timeOutList(list, valueOfTodo)
-    });
-
-
-
-    /* EventListener change todo-titel, replace p-tag with text-input, remove "change" button with save button and revers based on showContent value */
-    changeTextButton.addEventListener("click", () => {
-      /* close item if user click on change-button  */
-      closeChangeItems(list, valueOfTodo, list[i])
-      list[i].showContent = !list[i].showContent
-      if (newTitel.value !== '') {
-        list[i].titel = newTitel.value
-      }
-      List(list, valueOfTodo)
-    })
+    /* eventListners for removButton, changeTextButton and statusOfTodoCheck  */
+    eventListenerTodos(list, statusOfTodoCheck, changeTextButton, newTitel, removButton, [i], valueOfTodo)
   }
 }
