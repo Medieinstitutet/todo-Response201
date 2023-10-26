@@ -10,11 +10,11 @@ export const actionButtons = (list) => {
     actionButtonsContainer.classList.add('actionButtonsContainer')
     actionButtonsSection.classList.add('actionButtonsSection')
     let sortList = document.createElement('button')
-    sortList.innerHTML = 'sort list'
+    sortList.innerHTML = 'Sort list'
     let notDone = document.createElement('button')
-    notDone.innerHTML = 'left to do'
+    notDone.innerHTML = 'Left to do'
     let done = document.createElement('button')
-    done.innerHTML = 'done'
+    done.innerHTML = 'Done'
     container.appendChild(actionButtonsContainer)
     actionButtonsContainer.appendChild(actionButtonsSection)
     actionButtonsSection.appendChild(sortList);

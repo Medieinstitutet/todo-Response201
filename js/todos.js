@@ -88,10 +88,10 @@ export const todos = (list, valueOfTodo) => {
     /* display save-button & input for new titel or change-button & display titel from todo-item */
     if (showContent) {
       newTitel.classList.add('hide')
-      changeTextButton.innerHTML = 'change'
+      changeTextButton.innerHTML = 'Change'
     } else {
       titel.classList.add('hide')
-      changeTextButton.innerHTML = 'save'
+      changeTextButton.innerHTML = 'Save'
     }
 
 
