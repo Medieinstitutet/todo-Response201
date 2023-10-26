@@ -70,7 +70,7 @@ export const todos = (list, valueOfTodo) => {
 
 
     /* 'valueOfTodo' check if todo is done or not =>  then display item based on this condition */
-    if (list[i].done === valueOfTodo || valueOfTodo === '') {
+    if (list[i].done === valueOfTodo || valueOfTodo === '' || valueOfTodo === 'noActiveButton' ) {
       showList.appendChild(row);
       row.appendChild(titelContainer);
       titelContainer.appendChild(newTitel);

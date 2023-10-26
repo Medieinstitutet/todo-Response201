@@ -16,5 +16,14 @@
         button {
             @include mixins.button() {}
         }
+
+
+.active{
+
+background-color: v.$secondary-color
+
+}
+
+
     }
 }

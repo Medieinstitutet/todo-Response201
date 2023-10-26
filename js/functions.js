@@ -53,13 +53,13 @@ export const List = (list, valueOfTodo) => {
     /* if list changes, new current list is passed to components  */
     if (list) {
         addTodo(list, valueOfTodo);
-        actionButtons(list)
+        actionButtons(list, valueOfTodo)
         todos(list, valueOfTodo)
     }
     /* give default list to components if updated list is missing*/
     else {
         addTodo(startList, valueOfTodo);
-        actionButtons(startList)
+        actionButtons(startList, valueOfTodo)
         todos(startList, valueOfTodo)
     }
 }

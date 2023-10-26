@@ -1,8 +1,7 @@
 import { eventListenerActionButtons } from "./eventListeners"
 import { removeElement } from "./functions"
-export const actionButtons = (list) => {
+export const actionButtons = (list, valueOfTodo) => {
     removeElement('actionButtonsContainer')
-
     const container = document.getElementById('container')
     const actionButtonsContainer = document.createElement('articel')
     actionButtonsContainer.setAttribute('id', 'actionButtonsContainer')
@@ -21,6 +20,19 @@ export const actionButtons = (list) => {
     actionButtonsSection.appendChild(notDone)
     actionButtonsSection.appendChild(done)
 
+    /* for add color to active button */
+    if( valueOfTodo === ''){
+        sortList.classList.add('active')
+        }else if(valueOfTodo === 'noActiveButton'){
+        }else if(valueOfTodo){
+            done.classList.add('active')
+        }else if(!valueOfTodo){
+            notDone.classList.add('active')
+        }
+
+
     /* EventListener for: sortList, notDone, done */
-    eventListenerActionButtons(list, sortList, notDone, done)
+    eventListenerActionButtons(list, sortList, notDone, done, valueOfTodo)
+   
+
 }
